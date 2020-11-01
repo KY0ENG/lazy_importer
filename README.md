@@ -63,6 +63,19 @@ LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
     <td align="center">:white_check_mark:</td>
     <td align="center">:white_check_mark:</td>
   </tr>
+  <tr>
+    <td colspan="4">Attemps to find the given module using the given LDR_DATA_TABLE_ENTRY pointer</td>
+  </tr>
+  <tr>
+    <td><code>in&lt;T = void*, Ldr&gt;(Ldr ldr_entry) -&gt; T</code></td>
+    <td align="center">:white_check_mark:</td>
+    <td align="center">:x:</td>
+  </tr>
+  <tr>
+    <td><code>in_cached&lt;T = void*, Ldr&gt;(Ldr ldr_entry) -&gt; T</code></td>
+    <td align="center">:white_check_mark:</td>
+    <td align="center">:white_check_mark:</td>
+  </tr>
 </table>
 
 #### **`lazy_function<F>`**
@@ -198,6 +211,7 @@ LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
 | `LAZY_IMPORTER_CASE_INSENSITIVE`          | enables case insensitive comparison. Might be required for forwarded export resolution. |
 | `LAZY_IMPORTER_CACHE_OPERATOR_PARENS`     | uses `cached()` instead of `get()` in `operator()` of lazy_function                     |
 | `LAZY_IMPORTER_RESOLVE_FORWARDED_EXPORTS` | uses `forwarded()` in `get()`. WARNING does not apply to `nt()` and `in()`.             |
+| `LAZY_IMPORTER_HARDENED_MODULE_CHECKS`    | adds extra sanity checks to module enumeration.                                         |
 
 ## example output
 
@@ -243,3 +257,9 @@ LABEL_8:
                                                        + (unsigned int)v3[7]
                                                        + 4i64 * *(unsigned __int16 *)(v1 + (unsigned int)v3[9] + 2 * v4))))("hello world");
 ```
+
+## People that have supported this project
+I would like to thank people that have reached out to me and donated some money to support me and my projects
+
+* [@DefCon42](https://github.com/DefCon42)
+* [@Mecanik](https://github.com/Mecanik)
